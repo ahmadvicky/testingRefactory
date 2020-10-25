@@ -26,34 +26,39 @@ class _HomeScreen extends State<HomeScreen> {
       appBar: AppBar(
         title: Text('Home'),
       ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.only(left: 10,right: 10),
-              child: TextField(
-                controller: _text,
-              ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            padding: EdgeInsets.only(left: 10,right: 10),
+            child: TextField(
+              controller: _text,
             ),
-            Container(
+          ),
+          Container(
+            margin: EdgeInsets.all(20),
+            child: Text(
+              'Output : $hasil'
+            ),
+          ),
+          GestureDetector(
+            onTap: (){
+              hasil = _text.text.split('').reversed.join();
+              setState(() {});
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.grey,
+
+              ),
+              padding: EdgeInsets.all(15),
               child: Text(
-                'Output : $hasil'
+                'Reverse'
               ),
             ),
-            GestureDetector(
-              onTap: (){
-                hasil = _text.text.split('').reversed.join();
-                setState(() {});
-              },
-              child: Container(
-                child: Text(
-                  'Reverse'
-                ),
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       )
     );
   }
