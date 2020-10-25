@@ -44,9 +44,7 @@ class _HomeScreen extends State<HomeScreen> {
             GestureDetector(
               onTap: (){
                 hasil = _text.text.split('').reversed.join();
-                setState(() {
-
-                });
+                setState(() {});
               },
               child: Container(
                 child: Text(
